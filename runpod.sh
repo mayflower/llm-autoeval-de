@@ -25,7 +25,7 @@ if [ "$BENCHMARK" == "openllm" ]; then
 
     benchmark="arc_de"
     python eval_de.py  --model hf-causal-experimental \
-        --model_args pretrained=${MODEL},dtype=auto,gpu_memory_utilization=0.8,use_accelerate=True,trust_remote_code=$TRUST_REMOTE_CODE \
+        --model_args pretrained=${MODEL},dtype=auto,use_accelerate=True,trust_remote_code=$TRUST_REMOTE_CODE \
         --tasks arc_challenge_de \
         --num_fewshot 25 \
         --batch_size auto \
@@ -33,7 +33,7 @@ if [ "$BENCHMARK" == "openllm" ]; then
 
     benchmark="hellaswag_de"
     python eval_de.py  --model hf-causal-experimental \
-        --model_args pretrained=${MODEL},dtype=auto,gpu_memory_utilization=0.8,use_accelerate=True,trust_remote_code=$TRUST_REMOTE_CODE \
+        --model_args pretrained=${MODEL},dtype=auto,use_accelerate=True,trust_remote_code=$TRUST_REMOTE_CODE \
         --tasks hellaswag_de \
         --num_fewshot 10 \
         --batch_size auto \
@@ -41,7 +41,7 @@ if [ "$BENCHMARK" == "openllm" ]; then
 
     benchmark="mmlu_de"
     python eval_de.py  --model hf-causal-experimental \
-         --model_args pretrained=${MODEL},dtype=auto,gpu_memory_utilization=0.8,use_accelerate=True,trust_remote_code=$TRUST_REMOTE_CODE \
+         --model_args pretrained=${MODEL},dtype=auto,use_accelerate=True,trust_remote_code=$TRUST_REMOTE_CODE \
          --tasks "MMLU-DE*" \
          --num_fewshot 5 \
          --batch_size auto \
@@ -50,7 +50,7 @@ if [ "$BENCHMARK" == "openllm" ]; then
     
     benchmark="truthfulqa_de"
     python eval_de.py  --model hf-causal-experimental \
-        --model_args pretrained=${MODEL},dtype=auto,gpu_memory_utilization=0.8,use_accelerate=True,trust_remote_code=$TRUST_REMOTE_CODE \
+        --model_args pretrained=${MODEL},dtype=use_accelerate=True,trust_remote_code=$TRUST_REMOTE_CODE \
         --tasks truthful_qa_de \
         --num_fewshot 0 \
         --batch_size auto \
