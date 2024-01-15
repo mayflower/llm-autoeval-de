@@ -16,11 +16,9 @@ fi
 
 # Run evaluation
 if [ "$BENCHMARK" == "openllm" ]; then
-    git clone -b mmlu_de https://github.com/bjoernpl/lm-evaluation-harness-de.git
+    git clone -b mmlu_de https://github.com/mayflower/lm-evaluation-harness-de.git
     cd lm-evaluation-harness-de
-    git pull origin pull/3/head
     pip install -e ".[multilingual, sentencepiece]"
-
     pip install langdetect immutabledict
 
     benchmark="arc_de"
