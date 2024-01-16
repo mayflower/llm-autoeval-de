@@ -43,7 +43,6 @@ if [ "$BENCHMARK" == "openllm" ]; then
          --tasks "MMLU-DE*" \
          --num_fewshot 5 \
          --batch_size auto \
-         --verbosity DEBUG \
          --output_path ./${benchmark}.json
     
     benchmark="truthfulqa_de"
