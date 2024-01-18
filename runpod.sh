@@ -121,7 +121,7 @@ elif [ "$BENCHMARK" == "openllm" ]; then
     
     python ../llm-autoeval/main.py . $(($end-$start))
     
-elif [ "$BENCHMARK" == "openllm" ]; then
+elif [ "$BENCHMARK" == "openllm_de" ]; then
     git clone -b mmlu_de https://github.com/mayflower/lm-evaluation-harness-de.git
     cd lm-evaluation-harness-de
     pip install -e ".[multilingual, sentencepiece]"
