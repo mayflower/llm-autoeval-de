@@ -42,7 +42,20 @@ def calculate_average(data, task):
             return (
                 data["results"]["gsm8k"]["exact_match,get-answer"] * 100
             )  # should be "acc" instead
-
+    elif BENCHMARK == "openllm_de":
+        print(data["results"])
+        if task == "arc_de":
+            return data["results"]["arc_challenge"]["acc_norm"] * 100
+        elif task == "hellaswag_de":
+            return data["results"]["hellaswag_de"]["acc_norm"] * 100
+        elif task == "truthfulqa_de":
+            value = data["results"]["truthful_qa_de"]["mc2"]
+            return 0.0 if math.isnan(value) else value * 100
+        elif task == "winogrande_de":
+            return data["results"]["winogrande_de"]["acc,none"] * 100
+        elif task == "mmlu_de":
+            return data["results"]["MMLU-DE"]["acc"] * 100
+        
     elif BENCHMARK == "nous":
         if task == "agieval":
             return get_acc_norm(data)
