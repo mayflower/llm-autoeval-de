@@ -129,7 +129,7 @@ elif [ "$BENCHMARK" == "openllm_de" ]; then
 
     benchmark="arc_de"
     python eval_de.py  --model hf-causal-experimental \
-        --model_args pretrained=${MODEL},dtype=auto,use_accelerate=True,trust_remote_code=$TRUST_REMOTE_CODE \
+        --model_args pretrained=${MODEL},dtype=auto,trust_remote_code=$TRUST_REMOTE_CODE \
         --tasks arc_challenge_de \
         --num_fewshot 25 \
         --batch_size auto \
@@ -137,7 +137,7 @@ elif [ "$BENCHMARK" == "openllm_de" ]; then
 
     benchmark="hellaswag_de"
     python eval_de.py  --model hf-causal-experimental \
-        --model_args pretrained=${MODEL},dtype=auto,use_accelerate=True,trust_remote_code=$TRUST_REMOTE_CODE \
+        --model_args pretrained=${MODEL},dtype=auto,trust_remote_code=$TRUST_REMOTE_CODE \
         --tasks hellaswag_de \
         --num_fewshot 10 \
         --batch_size auto \
@@ -145,7 +145,7 @@ elif [ "$BENCHMARK" == "openllm_de" ]; then
 
     benchmark="mmlu_de"
     python eval_de.py  --model hf-causal-experimental \
-         --model_args pretrained=${MODEL},dtype=auto,use_accelerate=True,trust_remote_code=$TRUST_REMOTE_CODE \
+         --model_args pretrained=${MODEL},dtype=auto,trust_remote_code=$TRUST_REMOTE_CODE \
          --tasks "MMLU-DE*" \
          --num_fewshot 5 \
          --batch_size auto \
@@ -153,7 +153,7 @@ elif [ "$BENCHMARK" == "openllm_de" ]; then
     
     benchmark="truthfulqa_de"
     python eval_de.py  --model hf-causal-experimental \
-        --model_args pretrained=${MODEL},dtype=use_accelerate=True,trust_remote_code=$TRUST_REMOTE_CODE \
+        --model_args pretrained=${MODEL},dtype=auto,trust_remote_code=$TRUST_REMOTE_CODE \
         --tasks truthful_qa_de \
         --num_fewshot 0 \
         --batch_size auto \
