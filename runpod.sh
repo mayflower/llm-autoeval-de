@@ -131,7 +131,7 @@ elif [ "$BENCHMARK" == "openllm_de" ]; then
     python eval_de.py  --model hf-causal-experimental \
         --model_args pretrained=${MODEL},dtype=auto,trust_remote_code=$TRUST_REMOTE_CODE \
         --tasks arc_challenge_de \
-        --num_fewshot 25 \
+        --num_fewshot 24 \
         --batch_size auto \
         --output_path ./${benchmark}.json
 
@@ -163,7 +163,7 @@ elif [ "$BENCHMARK" == "openllm_de" ]; then
     end=$(date +%s)
     echo "Elapsed Time: $(($end-$start)) seconds"
     
-    python ../llm-autoeval/main.py . $(($end-$start))
+    python ../llm-autoeval-de/main.py . $(($end-$start))
 else
     echo "Error: Invalid BENCHMARK value. Please set BENCHMARK to 'openllm'."
 fi
