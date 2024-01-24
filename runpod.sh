@@ -8,7 +8,8 @@ apt install -y screen vim git-lfs
 screen
 
 # Install common libraries
-pip install -q git+https://github.com/huggingface/transformers.git git+https://github.com/casper-hansen/AutoAWQ.git  bitsandbytes requests accelerate sentencepiece pytablewriter einops protobuf flash-attn 
+pip install -q git+https://github.com/huggingface/transformers.git git+https://github.com/casper-hansen/AutoAWQ.git  bitsandbytes requests accelerate sentencepiece pytablewriter einops protobuf 
+pip install flash-attn
 
 if [ "$DEBUG" == "True" ]; then
     echo "Launch LLM AutoEval in debug mode"
