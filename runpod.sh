@@ -129,7 +129,7 @@ elif [ "$BENCHMARK" == "openllm_de" ]; then
     pip install langdetect immutabledict
 
     benchmark="arc_de"
-    python eval_de.py  --model hf-causal-experimental \
+    python eval_de.py  --model hf-causal \
         --model_args pretrained=${MODEL},dtype=auto,trust_remote_code=$TRUST_REMOTE_CODE \
         --tasks arc_challenge_de \
         --num_fewshot 24 \
@@ -137,7 +137,7 @@ elif [ "$BENCHMARK" == "openllm_de" ]; then
         --output_path ./${benchmark}.json
 
     benchmark="hellaswag_de"
-    python eval_de.py  --model hf-causal-experimental \
+    python eval_de.py  --model hf-causal \
         --model_args pretrained=${MODEL},dtype=auto,trust_remote_code=$TRUST_REMOTE_CODE \
         --tasks hellaswag_de \
         --num_fewshot 10 \
@@ -145,7 +145,7 @@ elif [ "$BENCHMARK" == "openllm_de" ]; then
         --output_path ./${benchmark}.json
 
     benchmark="mmlu_de"
-    python eval_de.py  --model hf-causal-experimental \
+    python eval_de.py  --model hf-causal \
          --model_args pretrained=${MODEL},dtype=auto,trust_remote_code=$TRUST_REMOTE_CODE \
          --tasks "MMLU-DE*" \
          --num_fewshot 5 \
@@ -153,7 +153,7 @@ elif [ "$BENCHMARK" == "openllm_de" ]; then
          --output_path ./${benchmark}.json
     
     benchmark="truthfulqa_de"
-    python eval_de.py  --model hf-causal-experimental \
+    python eval_de.py  --model hf-causal \
         --model_args pretrained=${MODEL},dtype=auto,trust_remote_code=$TRUST_REMOTE_CODE \
         --tasks truthful_qa_de \
         --num_fewshot 0 \
